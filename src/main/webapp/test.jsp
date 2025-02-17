@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Ceci est une page générée depuis une JSP.</p>
+	<p>Ceci est une page générée depuis une test.jsp.</p>
 
 </body>
 </html>

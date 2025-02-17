@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Test
  */
-@WebServlet("/Test")
+@WebServlet("/Test2")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +28,27 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   	
+//		usePrintWriter(response);
+		useRequesDispatcher(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+	
+	public void useRequesDispatcher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		this.getServletContext()
+			.getRequestDispatcher("/test.jsp")
+			.forward(request, response);
+	}
+
+	public void usePrintWriter(HttpServletResponse response) throws IOException {
+		
 		response.setContentType("text/html");
 		response.setCharacterEncoding( "UTF-8" );
 		PrintWriter out = response.getWriter();
@@ -42,13 +63,4 @@ public class Test extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
