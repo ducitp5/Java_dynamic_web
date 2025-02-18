@@ -30,6 +30,7 @@ public class Test extends HttpServlet {
 	   	
 //		usePrintWriter(response);
 		useRequesDispatcher(request, response);
+		
 	}
 
 	/**
@@ -42,6 +43,13 @@ public class Test extends HttpServlet {
 	
 	public void useRequesDispatcher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String paramAuteur = request.getParameter("auteur");
+		String message = "Transmission de variables : OK ! " + paramAuteur;
+		request.setAttribute("message", message);
+		
+		System.out.println("paramAuteur - " +paramAuteur);
+		System.out.println("message - " +message);
+
 		this.getServletContext()
 			.getRequestDispatcher("/test.jsp")
 			.forward(request, response);

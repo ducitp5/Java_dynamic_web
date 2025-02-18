@@ -7,7 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Ceci est une page générée depuis une test.jsp.</p>
+	<p>Ceci est une page générée depuis une test.jsp. 22</p>
+	<p>
+		<%
+			String attribut = (String) request.getAttribute("message");
+			out.println(attribut);
+			String parametre = request.getParameter("auteur");
+			out.println(parametre);
+		%>
+	</p>
 
 </body>
 </html>
