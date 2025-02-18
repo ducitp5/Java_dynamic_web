@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sdzee.beans.Coyote;
+
 /**
  * Servlet implementation class Test
  */
@@ -29,7 +31,8 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   	
 //		usePrintWriter(response);
-		useRequesDispatcher(request, response);
+//		useRequesDispatcher(request, response);
+		useBeanCoyote(request, response);
 		
 	}
 
@@ -41,6 +44,23 @@ public class Test extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	public void useBeanCoyote(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String paramAuteur = request.getParameter("auteur");
+		String message = "Transmission de variables : OK ! " + paramAuteur;
+
+		Coyote premierBean = new Coyote();
+
+		premierBean.setNom("Coyote");
+		premierBean.setPrenom("Wile E.");
+
+		request.setAttribute("test", message);
+		request.setAttribute("coyote", premierBean);
+
+		System.out.println("abc");
+		this.getServletContext().getRequestDispatcher("/duc/test.jsp").forward(request, response);
+	}
+
 	public void useRequesDispatcher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramAuteur = request.getParameter("auteur");
@@ -51,7 +71,7 @@ public class Test extends HttpServlet {
 		System.out.println("message - " +message);
 
 		this.getServletContext()
-			.getRequestDispatcher("/test.jsp")
+			.getRequestDispatcher("duc/test.jsp")
 			.forward(request, response);
 	}
 
