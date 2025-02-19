@@ -58,7 +58,7 @@ public class Test extends HttpServlet {
 		request.setAttribute("coyote", premierBean);
 
 		System.out.println("abc");
-		this.getServletContext().getRequestDispatcher("/duc/test.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/duc/NewFile.jsp").forward(request, response);
 	}
 
 	public void useRequesDispatcher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

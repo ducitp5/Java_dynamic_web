@@ -2,8 +2,8 @@ package com.sdzee.beans;
 
 public class Coyote {
 	
-	private String prenom;
-	private String nom;
+	public String prenom 	= "default prenom";
+	public String nom		= "default nom";
 
 	private boolean genius;
 
