@@ -14,7 +14,7 @@ import com.sdzee.beans.Coyote;
 /**
  * Servlet implementation class Test
  */
-@WebServlet("/Test2")
+@WebServlet("/Test1")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
