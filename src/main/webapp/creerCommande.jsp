@@ -1,4 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="inc/style.css" />
 </head>
 <body>
+	<c:import url="/inc/menu.jsp" />
     <div>
-        <form method="get" action="creationCommande">
+		<form method="get" action="<c:url value='/creationCommande' />">
             <fieldset>
                 <legend>Informations client</legend>
                 
