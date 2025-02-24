@@ -18,4 +18,23 @@
 		<servlet-name>Test</servlet-name>
 		<url-pattern>/toto</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreationClient</servlet-name>
+		<servlet-class>com.sdzee.tp.servlets.CreationClient</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreationCommande</servlet-name>
+		<servlet-class>com.sdzee.tp.servlets.CreationCommande</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreationClient</servlet-name>
+		<url-pattern>/creationClient</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreationCommande</servlet-name>
+		<url-pattern>/creationCommande</url-pattern>
+	</servlet-mapping>
+
 </web-app>
