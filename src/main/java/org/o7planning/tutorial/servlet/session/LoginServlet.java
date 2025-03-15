@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import org.o7planning.tutorial.beans.Constants;
 import org.o7planning.tutorial.beans.UserInfo;
 
-@WebServlet(urlPatterns = { "/login" })
+@WebServlet(urlPatterns = { "/login2" })
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
